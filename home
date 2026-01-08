@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Classroom Home Page</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header>
+        <h1>Computer Science & Tech</h1>
+        <p>Room 204 | Mr. Teacher</p>
+        <nav>
+            <a href="#">Home</a>
+            <a href="#">Assignments</a>
+            <a href="#">Resources</a>
+            <a href="#">Contact</a>
+        </nav>
+    </header>
+
+    <main>
+        <section class="hero">
+            <h2>Welcome to Class!</h2>
+            <p>This week, we are exploring the fundamentals of Python and Web Design.</p>
+        </section>
+
+        <div class="content-grid">
+            <section class="card">
+                <h3>📢 Announcements</h3>
+                <ul>
+                    <li>P-TECH Applications due Friday.</li>
+                    <li>Coding Club meets Tuesday at 3:30 PM.</li>
+                    <li>Bring headphones for tomorrow's lab.</li>
+                </ul>
+            </section>
+
+            <section class="card">
+                <h3>🚀 Current Project</h3>
+                <p>We are building **Password Strength Checkers** using Python logic! Check the resources tab for the starter code.</p>
+                <button>View Project Details</button>
+            </section>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 Skyline Middle School Tech</p>
+    </footer>
+
+</body>
+</html>
