@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Python Password Checker</title>
+    
+    <link rel="stylesheet" href="https://pyscript.net/releases/2024.1.1/core.css">
+    <script type="module" src="https://pyscript.net/releases/2024.1.1/core.js"></script>
+    
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <section class="card">
+        <h3>Input a Password</h3>
+        <input type="text" id="pass-input" placeholder="Type password here...">
+        <button id="check-btn" py-click="check_password">Check Strength</button>
+        
+        <div id="result-display" style="margin-top: 20px; font-weight: bold;"></div>
+    </section>
+
+    <script type="py">
+        from pyscript import document
+
+        def check_password(event):
+            # Grab the text from the HTML input box
+            password = document.querySelector("#pass-input").value
+            display = document.querySelector("#result-display")
+            
+            score = 0
+            feedback = []
+
+            # Logic checks
+            if len(password) >= 8: score += 1
+            else: feedback.append("Needs 8+ characters")
+
+            if any(char.isdigit() for char in password): score += 1
+            else: feedback.append("Add a number")
+
+            if any(char.isupper() for char in password): score += 1
+            else: feedback.append("Add an uppercase letter")
+
+            if any(char in "!@#$%^&*" for char in password): score += 1
+            else: feedback.append("Add a symbol")
+
+            # Display the result back in the HTML
+            if score == 4:
+                display.innerText = "Strength: STRONG 💪"
+                display.style.color = "green"
+            elif score >= 2:
+                display.innerText = f"Strength: MEDIUM 😐 ({', '.join(feedback)})"
+                display.style.color = "orange"
+            else:
+                display.innerText = f"Strength: WEAK 🛑 ({', '.join(feedback)})"
+                display.style.color = "red"
+    </script>
+
+</body>
+</html>
